@@ -1,0 +1,969 @@
+ 
+/* ==========================================
+   ROSA VELVÆRE - BEHANDLINGER
+   ========================================== */
+
+/* FARGER OG GRUNNLEGGENDE STYLING */
+
+:root {
+    --pink: #f76ba5;
+    --pink-dark: #de4d8d;
+    --pink-light: #fff3f7;
+    --beige: #f7f1eb;
+    --cream: #fcfaf7;
+    --text: #292329;
+    --gray: #777077;
+    --border: #eee5e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrap,
+.container {
+    width: min(1120px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==========================================
+   NAVIGASJON
+   ========================================== */
+
+.site-header {
+    background-color: white;
+    border-bottom: 1px solid #f4eef0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 5%;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--pink);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--pink-dark);
+}
+
+.booking-btn,
+.nav-links .booking-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+    color: white;
+    border-radius: 7px;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.booking-btn:hover,
+.nav-links .booking-btn:hover {
+    background-color: var(--pink-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* MOBILMENY */
+
+.menu-toggle {
+    display: none;
+    background-color: white;
+    border: 1px solid #e8dce1;
+    border-radius: 7px;
+    padding: 8px 14px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   OVERSKRIFT / HERO
+   ========================================== */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #fff9fb 0%,
+        #fff3f7 55%,
+        #faf2ea 100%
+    );
+
+    padding: 85px 0 90px;
+}
+
+.hero .wrap {
+    max-width: 1120px;
+}
+
+.eyebrow {
+    display: block;
+    color: var(--pink-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 66px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 580px;
+}
+
+
+/* ==========================================
+   ROSA KATEGORIMENY
+   
+   ========================================== */
+
+.category-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+
+    width: 100vw;
+    margin: 45px 0 100px calc(50% - 50vw);
+
+    background-color: #f7c6dc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* DE FIRE KNAPPENE */
+
+.category-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 74px;
+    padding: 25px 10px;
+
+    background-color: #f7c6dc;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+    border-radius: 0;
+
+    transition: background-color 0.2s ease;
+}
+
+/* SKILLELINJER */
+
+.category-nav a:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* HOVER */
+
+.category-nav a:hover {
+    background-color: #ff69a3;
+    color: white;
+    transform: none;
+}
+
+/* MOBILTILPASNING */
+
+@media (max-width: 700px) {
+
+    .category-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 30px 0 65px calc(50% - 50vw);
+    }
+
+    .category-nav a {
+        min-height: 74px;
+        padding: 20px 8px;
+        font-size: 16px;
+    }
+
+    .category-nav a:nth-child(2) {
+        border-right: none;
+    }
+
+    .category-nav a:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+}
+
+
+
+/* ==========================================
+   BEHANDLINGSKATEGORIER
+   ========================================== */
+
+.service-group {
+    margin-bottom: 115px;
+    scroll-margin-top: 35px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 38px;
+}
+
+.section-label {
+    display: block;
+    color: var(--pink-dark);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: var(--gray);
+    font-size: 15px;
+    max-width: 570px;
+}
+
+.count {
+    color: var(--gray);
+    font-size: 13px;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 15px;
+}
+
+
+/* ==========================================
+   LISTE OVER BEHANDLINGER
+   ========================================== */
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* HVER BEHANDLING FÅR SIN EGEN BOKS */
+
+.service-card {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 0.85fr);
+
+    align-items: stretch;
+    gap: 25px;
+
+    padding: 15px;
+    min-height: 285px;
+
+    background-color: var(--pink-light);
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* ANNENHVER BOKS FÅR BEIGE BAKGRUNN */
+
+.service-card:nth-child(even) {
+    background-color: var(--beige);
+}
+
+/* LITEN HOVER-EFFEKT */
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(75, 35, 55, 0.07);
+}
+
+
+/* ==========================================
+   TEKST PÅ VENSTRE SIDE
+   ========================================== */
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 28px 20px 28px 30px;
+}
+
+.service-kicker {
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.service-text h3 {
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 3vw, 31px);
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.service-text p {
+    color: #6c666b;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   PRIS OG BOOKINGKNAPP
+   ========================================== */
+
+.service-bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+
+    width: 100%;
+    margin-top: auto;
+}
+
+.service-price {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.book-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--pink);
+    color: white;
+
+    border-radius: 7px;
+    padding: 12px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.book-link:hover {
+    background-color: var(--pink-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   BILDER PÅ HØYRE SIDE
+   ========================================== */
+
+.service-image {
+    min-width: 0;
+    min-height: 255px;
+    overflow: hidden;
+
+    border-radius: 15px;
+    background-color: #f3e9e9;
+}
+
+.service-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 15px;
+
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.035);
+}
+
+
+/* ==========================================
+   PLASSHOLDER FOR MANGLENDE BILDER
+   ========================================== */
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 100%;
+    min-height: 255px;
+
+    background: linear-gradient(
+        135deg,
+        #fce9ef,
+        #f3e6df
+    );
+
+    color: #b78a99;
+    text-align: center;
+}
+
+.image-placeholder span {
+    font-size: 43px;
+    line-height: 1;
+}
+
+.image-placeholder small {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   TILLEGGSINFORMASJON
+   ========================================== */
+
+.category-note {
+    margin-top: 22px;
+    padding: 18px 22px;
+
+    background-color: #faf7f4;
+    border-left: 3px solid var(--pink);
+
+    border-radius: 0 8px 8px 0;
+
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   AVSLUTTENDE BOOKINGSEKSJON
+   ========================================== */
+
+.closing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+
+    background: linear-gradient(
+        120deg,
+        #fce5ee,
+        #fff2e9
+    );
+
+    padding: 55px;
+    border-radius: 22px;
+    margin-bottom: 35px;
+}
+
+.closing h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(29px, 4vw, 42px);
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.closing p {
+    color: var(--gray);
+    font-size: 15px;
+    max-width: 480px;
+}
+
+.closing .booking-btn {
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   PRISINFORMASJON
+   ========================================== */
+
+.price-disclaimer {
+    color: #8a8388;
+    font-size: 12px;
+    line-height: 1.8;
+
+    margin-bottom: 100px;
+}
+
+.price-disclaimer a {
+    color: var(--pink-dark);
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   FOOTER - BEHANDLINGSSIDEN
+   ========================================== */
+
+.site-footer {
+    background-color: white;
+    padding: 45px 0 25px;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-layout h2 {
+    color: var(--pink);
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.footer-layout p {
+    max-width: 300px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    text-align: right;
+}
+
+.footer-contact a {
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-contact a:hover {
+    color: var(--pink-dark);
+}
+
+.footer-year {
+    color: #999;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+
+/* ==========================================
+   FOOTER - INFO OG OM OSS
+   Beholder styling for de andre sidene
+   ========================================== */
+
+footer:not(.site-footer) {
+    border-top: 1px solid #eeeeee;
+    padding: 40px 5%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.footer-left h3 {
+    color: var(--pink);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.footer-left p {
+    max-width: 300px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    text-align: right;
+}
+
+.footer-right p,
+.footer-right a {
+    color: #888;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    color: var(--pink-dark);
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   TILGJENGELIGHET
+   ========================================== */
+
+.skip-link {
+    position: absolute;
+    left: 15px;
+    top: -100px;
+
+    padding: 12px 20px;
+    background-color: white;
+    color: black;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--pink-dark);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   NETTBRETT
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .service-card {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 12px;
+        min-height: 260px;
+    }
+
+    .service-text {
+        padding: 20px 12px 20px 18px;
+    }
+
+    .service-text h3 {
+        font-size: 25px;
+    }
+
+    .service-text p {
+        font-size: 14px;
+    }
+
+    .closing {
+        padding: 40px;
+    }
+}
+
+
+/* ==========================================
+   MOBIL
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    /* NAVIGASJON */
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background-color: white;
+        padding: 15px 5% 25px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px 0;
+        font-size: 15px;
+    }
+
+    .nav-links .booking-btn {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* OVERSKRIFT */
+
+    .hero {
+        padding: 60px 0 65px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    /* KATEGORIKNAPPER */
+
+    .category-nav {
+        gap: 10px;
+        margin: 30px 0 65px;
+    }
+
+    .category-nav a {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    /* SEKSJONER */
+
+    .service-group {
+        margin-bottom: 75px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+
+    .count {
+        display: none;
+    }
+
+    /* BEHANDLINGSBOKSER */
+
+    .service-list {
+        gap: 20px;
+    }
+
+    .service-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 12px;
+        min-height: 0;
+        border-radius: 18px;
+    }
+
+    .service-text {
+        padding: 22px 12px 25px;
+    }
+
+    .service-text h3 {
+        font-size: 27px;
+        margin-bottom: 14px;
+    }
+
+    .service-text p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .service-bottom {
+        margin-top: 10px;
+    }
+
+    .service-price {
+        font-size: 19px;
+    }
+
+    /* BILDER */
+
+    .service-image {
+        min-height: 230px;
+        height: 230px;
+        border-radius: 12px;
+    }
+
+    .service-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    .image-placeholder {
+        min-height: 230px;
+    }
+
+    /* AVSLUTNING */
+
+    .closing {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        gap: 25px;
+        border-radius: 18px;
+    }
+
+    .closing h2 {
+        font-size: 31px;
+    }
+
+    .price-disclaimer {
+        margin-bottom: 65px;
+    }
+
+    /* FOOTER */
+
+    .footer-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-contact {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-year {
+        margin-top: 35px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+
+/* REDUSERT ANIMASJON VED BEHOV */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

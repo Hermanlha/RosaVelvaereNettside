@@ -1,4 +1,10 @@
 
+/* =========================================
+   ROSA VELVÆRE - FORSIDE
+   ========================================= */
+
+/* GRUNNLEGGENDE STYLING */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +14,13 @@
 body {
     font-family: Arial, sans-serif;
     color: #222;
-    background-color: white;
+    background-color: #ffffff;
+    line-height: 1.6;
 }
+
+/* =========================================
+   VANLIG NAVIGASJON
+   ========================================= */
 
 .navbar {
     display: flex;
@@ -46,6 +57,7 @@ body {
     color: white;
     padding: 12px 20px;
     border-radius: 6px;
+    transition: background-color 0.2s;
 }
 
 .nav-links .booking-btn:hover {
@@ -53,43 +65,41 @@ body {
     color: white;
 }
 
-main {
-    padding: 60px 6%;
-}
+/* =========================================
+   FORSIDENS NAVIGASJON
+   ========================================= */
 
-@media (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-}
 .home-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 20px;
+}
+
+/* LOGO */
+
+.home-logo {
+    display: block;
+    text-align: center;
 }
 
 .home-logo img {
     display: block;
-    width: 350px;
+    width: 450px;
     max-width: 90vw;
     height: auto;
 }
 
+/* NAVIGASJON UNDER LOGO */
+
 .home-nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 75px;
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .home-nav a {
@@ -97,16 +107,20 @@ main {
     text-decoration: none;
     font-size: 25px;
     font-weight: bold;
+    transition: color 0.2s;
 }
 
 .home-nav a:not(:last-child)::after {
     content: "|";
     margin-left: 12px;
+    color: #40303e;
 }
 
 .home-nav a:hover {
     color: #ff69a3;
 }
+
+/* STOR BOOKINGKNAPP */
 
 .home-booking-btn {
     display: block;
@@ -118,27 +132,134 @@ main {
     padding: 25px 20px;
     border-radius: 5px;
     font-size: 15px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s;
 }
 
 .home-booking-btn:hover {
     background-color: #ff69a3;
 }
 
-/* Mobiltilpasning */
+/* =========================================
+   HOVEDINNHOLD
+   ========================================= */
+
+main {
+    padding: 60px 6%;
+}
+
+/* =========================================
+   FOOTER - FORSIDE
+   ========================================= */
+
+.site-footer {
+    width: 100%;
+    margin-top: 100px;
+    padding: 0 6% 30px;
+    background-color: #ffffff;
+}
+
+/* TO KOLONNER */
+
+.site-footer .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+    width: 100%;
+    padding-top: 35px;
+    border-top: 1px solid #eeeeee;
+}
+
+/* VENSTRE SIDE */
+
+.site-footer .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+}
+
+.site-footer .footer-left h2 {
+    color: #ff69a3;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.site-footer .footer-left p {
+    color: #888888;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* HØYRE SIDE */
+
+.site-footer .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 6px;
+    width: 100%;
+}
+
+.site-footer .footer-right a {
+    color: #888888;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.site-footer .footer-right a:hover {
+    color: #ff69a3;
+}
+
+/* NEDERSTE DEL AV FOOTER */
+
+.site-footer .footer-bottom {
+    margin-top: 35px;
+    color: #999999;
+    font-size: 12px;
+}
+
+/* =========================================
+   MOBILTILPASNING
+   ========================================= */
+
 @media (max-width: 700px) {
+
+    /* VANLIG NAVIGASJON */
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* FORSIDENS LOGO */
+
     .home-header {
-        padding-top: 20px;
+        padding-top: 15px;
     }
 
     .home-logo img {
         width: 300px;
+        max-width: 90vw;
     }
+
+    /* FORSIDENS MENY */
 
     .home-nav {
         gap: 8px;
-        margin-top: 25px;
+        margin-top: 20px;
         margin-bottom: 25px;
+        padding: 0 10px;
     }
 
     .home-nav a {
@@ -147,5 +268,44 @@ main {
 
     .home-nav a:not(:last-child)::after {
         margin-left: 8px;
+    }
+
+    /* BOOKINGKNAPP */
+
+    .home-booking-btn {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    /* HOVEDINNHOLD */
+
+    main {
+        padding: 40px 6%;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+        margin-top: 60px;
+        padding: 0 6% 30px;
+    }
+
+    .site-footer .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 30px;
+    }
+
+    .site-footer .footer-left {
+        max-width: 100%;
+    }
+
+    .site-footer .footer-right {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .site-footer .footer-bottom {
+        margin-top: 30px;
     }
 }

@@ -1,0 +1,173 @@
+
+/* FELLES STIL FOR INFO OG OM OSS */
+
+.simple-page {
+    padding-bottom: 90px;
+}
+
+.simple-intro {
+    padding-top: 75px;
+    padding-bottom: 65px;
+}
+
+.simple-intro h1 {
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.simple-intro p {
+    font-size: 17px;
+    color: #777;
+    max-width: 620px;
+}
+
+/* INNHOLDSSEKSJONER */
+
+.simple-section {
+    margin-bottom: 85px;
+}
+
+.simple-section h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.simple-section h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.simple-section p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* TO KOLONNER */
+
+.simple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.simple-grid--center {
+    align-items: center;
+}
+
+/* BILDER */
+
+.simple-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+}
+
+.simple-image--portrait {
+    max-width: 440px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.simple-image--product {
+    max-width: 350px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+/* KNAPPER */
+
+.simple-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.simple-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.simple-button--dark {
+    background: #111;
+    color: white;
+}
+
+.simple-button--dark:hover {
+    background: #444;
+}
+
+.simple-button--light {
+    background: #e8e8e8;
+    color: #111;
+}
+
+.simple-button--light:hover {
+    background: #d6d6d6;
+}
+
+.simple-button--pink {
+    background: #f76ba5;
+    color: white;
+}
+
+.simple-button--pink:hover {
+    background: #df4f8c;
+}
+
+/* SPØRSMÅL */
+
+.simple-faq {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 60px;
+}
+
+.simple-faq article {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 20px;
+}
+
+/* MIDLERTIDIG TEKST */
+
+.placeholder-text {
+    color: #999;
+    font-style: italic;
+}
+
+/* MOBILTILPASNING */
+
+@media (max-width: 768px) {
+    .simple-page {
+        padding-bottom: 50px;
+    }
+
+    .simple-intro {
+        padding-top: 45px;
+        padding-bottom: 40px;
+    }
+
+    .simple-grid,
+    .simple-faq {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .simple-section {
+        margin-bottom: 60px;
+    }
+
+    .simple-image--portrait {
+        max-width: 100%;
+    }
+}
