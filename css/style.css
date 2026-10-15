@@ -1,0 +1,151 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 6%;
+}
+
+.logo {
+    color: #ff69a3;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #ff69a3;
+}
+
+.nav-links .booking-btn {
+    background-color: #ff69a3;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+}
+
+.nav-links .booking-btn:hover {
+    background-color: #eb4e8b;
+    color: white;
+}
+
+main {
+    padding: 60px 6%;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+.home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.home-logo img {
+    display: block;
+    width: 350px;
+    max-width: 90vw;
+    height: auto;
+}
+
+.home-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+.home-nav a {
+    color: #40303e;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.home-nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 12px;
+}
+
+.home-nav a:hover {
+    color: #ff69a3;
+}
+
+.home-booking-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #f7c6dc;
+    color: white;
+    text-decoration: none;
+    padding: 25px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.home-booking-btn:hover {
+    background-color: #ff69a3;
+}
+
+/* Mobiltilpasning */
+@media (max-width: 700px) {
+    .home-header {
+        padding-top: 20px;
+    }
+
+    .home-logo img {
+        width: 300px;
+    }
+
+    .home-nav {
+        gap: 8px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .home-nav a {
+        font-size: 16px;
+    }
+
+    .home-nav a:not(:last-child)::after {
+        margin-left: 8px;
+    }
+}
